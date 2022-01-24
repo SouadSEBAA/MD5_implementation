@@ -70,7 +70,7 @@ def md5(m):
                 v = add_modulo_2_32(v, A)
                 v = add_modulo_2_32(v, M[g[r][op]])
                 v = add_modulo_2_32(v, K[op+ 16*r])
-                v = left_rotate(v, s[r][op])
+                v = left_rotate(v, s[r][op]) #this an important step, it is responsible of assuring the avalanche effect, so that if two inputs differ by one bit, the hash produced is completely different
                 v = add_modulo_2_32(v, B)
 
                 A = D
